@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <a href="/add_post">Add Post</a>
+    <form method="POST" action="/add_post">
+        <h2>Add Post</h2>
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title"><br><br>
+        <label for="content">Content:</label><br>
+        <textarea name="content" id="content" rows="5" cols="50"></textarea><br><br>
+        <input type="submit" value="Add Post">
+    </form>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+            <td>{{ post[2] }}</td>
+            <td><a href="/edit_post/{{ post[0] }}">Edit</a></td>
+            <td><a href="/delete_post/{{ post[0] }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

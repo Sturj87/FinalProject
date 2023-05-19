@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+</head>
+<body>
+    <h1>Welcome to the coolest BLOG on the web</h1>
+    <h2>Here you will read the most interesting posts</h2>
+    <h3>Recent Posts</h3>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <h3>{{ post[2] }}</h3>
+            <p>Published on: {{ post[3] }}</p>
+            <p>{{ post[4] }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/login">Login</a>
+</body>
+</html>
